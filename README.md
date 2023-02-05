@@ -23,48 +23,28 @@ Do not put VN007+ fw on a 007 and vice versa.
 
 [vn007plus](/fw/plus)
 
-[vn007plus with SMS feature (experimental)](/fw/plus/X21G_1.12.5_IDU_1810_UN2020C_20220222_VN007_1.15UP_update.bin)
-
 ## Super user password 
 
 The VN007 has a 'superuser' password (different from admin/admin) which enables extra features (IP Passthrough etc) 
 
 First you need to enable ADB on the modem. Log into the web admin GUI (usually http://192.168.0.1) and press F12 in chrome to open up the developer console. 
+## Default username/pwd admin/admin
 
-Click on Network
+Click on Console;
 
-Click on any of the http.cgi requests and click 'Payload' 
+![image](https://user-images.githubusercontent.com/112876621/216832696-37bbcba9-adbb-45ab-afa4-0f2235d9d9e4.png)
 
-Make a note of the 'sessionId' 
+In Console type Page.level=1
 
-![image1](/img/sessionID.jpg)
+Press Enter.
 
+Now go to Management > System Settings
 
-Click the console tab and paste in the following:
-```
-$.post( 'http://192.168.0.1/cgi-bin/http.cgi' , '{"adbSwitch":1, "cmd": 237, "method":"POST", "language":"CN ", "sessionId": "XXXXXXXXXXXXXXXXXXXX"}' , function ( result ) { console .log(result) })
-```  
-Replace XXXXXX with your SessionID. !!!!
-Press ENTER to send the command. 
-A successful command will return: 
+![image](https://user-images.githubusercontent.com/112876621/216832799-6e33fa76-bd06-470d-b372-504cbab20775.png)
 
-```'{success: true, cmd:237, message: ''} ```
+In here, you will be able to change the root password (not Superadmin) and enable ADB.
 
-![image2](/img/adb-on.jpg)
-
-[Download an ADB client:](https://www.xda-developers.com/install-adb-windows-macos-linux/)
-
-
-```
-adb connect 192.168.0.1:5555
-adb shell
-grep SYS_SENIOR_LOGIN_PWD /tmp/mdlcfg.sysconfig
-```
-This will echo a line such as: 
-
-```EXPORT SYS_SENIOR_LOGIN_PWD="abc1234"```
-
-Where abc1234 will be the root password for the device. You can go ahead and log in to the web gui (http://192.168.0.1) as root / abc1234 (replace with the output from the command!)
+## NOTE! This only works in old firmware 1.9.x -> 10.10.x
 
 
 ## The SYS_SUPER / superadmin user 
