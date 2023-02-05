@@ -44,7 +44,7 @@ Now go to Management > System Settings
 
 In here, you will be able to change the root password (not Superadmin) and enable ADB.
 
-## NOTE! This only works in old firmware 1.9.x -> 10.10.x
+✍️ NOTE! This only works in old firmware 1.9.x -> 10.10.x
 
 
 ## The SYS_SUPER / superadmin user 
