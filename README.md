@@ -19,9 +19,9 @@ NOTE: The VN007+ firmware starts with X21G.
 
 Do not put VN007+ fw on a 007 and vice versa. 
 
-[vn007](/fw/007)
-
 [vn007plus](/fw/plus)
+
+[Firmware Table](https://github.com/szescxz/vn007_history_firmware/wiki/Firmware-Table)
 
 ## Super user password 
 
