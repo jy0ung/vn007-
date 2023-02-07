@@ -1,4 +1,4 @@
-# China Unicom VN007/VN007+ stuff
+# China Unicom VN007+ stuff
 
 ## Disclaimer/Warning: 
 
